@@ -1,0 +1,13 @@
+- name: apt update
+  apt:
+    name: '*'
+    state: latest
+    update_cache: yes
+#  when: ansible_os_family == "Ubuntu" you can use this here 
+
+- name: create user
+  user:
+    name: erfan
+    password: 123
+    state: present
+#  when: ansible_os_family == "Ubuntu" you can use this here 

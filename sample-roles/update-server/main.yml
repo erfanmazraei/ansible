@@ -1,0 +1,7 @@
+- name: Update Systems
+  hosts: all
+  become: true
+  gather_facts: True
+  roles:
+    - { role: ubuntu, when: ansible_os_family == "Debian" }
+    - { role: centos, when: ansible_os_family == "CentOS" }
